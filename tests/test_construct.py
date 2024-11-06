@@ -24,4 +24,3 @@ class TestClickElements:
 
         assert element_3.text == 'Начинки'
 
-        driver.quit()

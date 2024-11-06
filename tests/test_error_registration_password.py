@@ -6,7 +6,8 @@ from Locators import TestLocatorsReg
 
 class TestErrRegistry:
     def test_reg_password_less_six(self, driver):
-        driver.get("https://stellarburgers.nomoreparties.site/register")
+        url_reg = "https://stellarburgers.nomoreparties.site/register"
+        driver.get(url_reg)
 
         driver.find_element(By.XPATH, TestLocatorsReg.INPUT_REGISTRATION_NAME).send_keys("bezuglova")
         driver.find_element(By.XPATH, TestLocatorsReg.INPUT_REGISTRATION_EMAIL).send_keys(
@@ -18,4 +19,3 @@ class TestErrRegistry:
         assert driver.find_element(By.XPATH,
                                    "/html/body/div/div/main/div/form/fieldset[3]/div/p").text == 'Некорректный пароль'
 
-        driver.quit()
